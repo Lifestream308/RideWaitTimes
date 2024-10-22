@@ -41,9 +41,9 @@ export default function HamburgerComponent() {
         <div ref={menuRef} className='flex lg:hidden'>
             <nav className='h-20 p-4'>
                 <div className='h-full w-16 flex flex-col justify-between cursor-pointer' onClick={toggleMenu}>
-                    <div className={(menuIsOpen? 'hamburgerCrossed' : 'hamburgerStacked') + ' h-2 rounded-lg bg-blue-800'} ></div>
-                    <div className={(menuIsOpen? 'hamburgerCrossed' : 'hamburgerStacked') + ' h-2 rounded-lg bg-blue-800'} ></div>
-                    <div className={(menuIsOpen? 'hamburgerCrossed' : 'hamburgerStacked') + ' h-2 rounded-lg bg-blue-800'} ></div>
+                    <div className={(menuIsOpen? 'hamburgerCrossed' : 'hamburgerStacked') + ' h-2 w-full rounded-lg bg-blue-800'} ></div>
+                    <div className={(menuIsOpen? 'hamburgerCrossed' : 'hamburgerStacked') + ' h-2 w-full rounded-lg bg-blue-800'} ></div>
+                    <div className={(menuIsOpen? 'hamburgerCrossed' : 'hamburgerStacked') + ' h-2 w-full rounded-lg bg-blue-800'} ></div>
                 </div>
             </nav>
             <div className={(menuIsOpen? 'w-[12rem] opacity-100' : 'w-0 opacity-0') + ' pb-5 h-fit absolute flex justify-center bg-white top-28 right-0 rounded-bl-lg z-10 transition-all ease-in duration-200 overflow-hidden'}>
