@@ -2,8 +2,9 @@
 
 /* clicked - crosses lines to form an 'X' */
 .hamburgerCrossed:nth-child(1){
-    transform: rotate(45deg) translate(0.75em, 1.25em);
+    transform: translate(-50%, -50%) rotate(45deg);
     transition: ease-out 0.5s;
+    top: 50%;
 }
 
 .hamburgerCrossed:nth-child(2){
@@ -12,12 +13,13 @@
 }
 
 .hamburgerCrossed:nth-child(3){
-    transform: rotate(135deg) translate(-0.5em, 1em);
+    transform: translate(-50%, -50%) rotate(135deg);
     transition: ease-out 0.5s;
+    top: 50%;
 }
 
 /* unclicked - uncrosses lines and forms hamburger stack */
 .hamburgerStacked {
-    transform: rotate(0) translate(0);
+    transform: translate(-50%, -50%);
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
 }
