@@ -45,7 +45,7 @@ export default function HamburgerComponent() {
                 <div className={(menuIsOpen? 'hamburgerCrossed' : 'hamburgerStacked') + ' h-2 w-full absolute rounded-lg bg-blue-800 top-3/4 left-1/2'} ></div>
             </button>
             <div className={(menuIsOpen? 'w-[12rem] opacity-100' : 'w-0 opacity-0') + ' pb-5 h-fit absolute flex justify-center bg-white top-28 right-0 rounded-bl-lg z-10 transition-all ease-in duration-200 overflow-hidden'}>
-                <ul className='pt-6 flex flex-col gap-2 text-center'>
+                <ul className='pt-6 flex flex-col gap-6 text-center'>
                     <li><Link to='/' className='px-4 py-2 text-2xl font-bold text-blue-800 hover:bg-gray-200 rounded-lg'>Home</Link></li>
                     <li><Link to='/about' className='px-4 py-2 text-2xl font-bold text-blue-800 hover:bg-gray-200 rounded-lg' href="">About</Link></li>
                     <li><Link to='/contact' className='px-4 py-2 text-2xl font-bold text-white bg-gradient-to-r from-blue-700 to-blue-500 hover:shadow-md hover:text-gray-200 rounded-lg shadow-sm shadow-gray-800' href="">Contact</Link></li>
