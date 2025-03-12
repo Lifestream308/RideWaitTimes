@@ -16,7 +16,7 @@ function App() {
     console.log(today)
 
     try {
-      const docRef = doc(db, "waitTimes", "2025-03-11");
+      const docRef = doc(db, "waitTimes", today);
       const docSnap = await getDoc(docRef);
   
       if (docSnap.exists()) {
