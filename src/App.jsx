@@ -13,14 +13,13 @@ function App() {
   const getTodaysDocument = async () => {
 
     const today = String(new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" }));
-    console.log(today)
 
     try {
       const docRef = doc(db, "waitTimes", today);
       const docSnap = await getDoc(docRef);
   
       if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
+        console.log(docSnap.data());
         return docSnap.data();
       } else {
         console.log("No such document!");
