@@ -10,6 +10,8 @@ import ContactComponent from './components/ContactComponent'
 
 function App() {
 
+  let rides = {}
+
   const getTodaysDocument = async () => {
 
     const today = String(new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" }));
@@ -20,9 +22,11 @@ function App() {
   
       if (docSnap.exists()) {
         console.log(docSnap.data());
+        rides = object.entries(docSnap.data());
         return docSnap.data();
       } else {
         console.log("No such document!");
+        console.log(rides);
         return null;
       }
     } catch (error) {
@@ -41,7 +45,7 @@ function App() {
       <HeaderComponent />
 
       <Routes>
-        <Route path='/' element={ <HomePageComponent /> } />
+        <Route path='/' element={ <HomePageComponent rides={rides} /> } />
         <Route path='/about' element={ <AboutComponent /> } />
         <Route path='/contact' element={ <ContactComponent /> } />
       </Routes>

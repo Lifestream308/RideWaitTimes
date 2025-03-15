@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function HomePageComponent() {
+export default function HomePageComponent({rides}) {
   return (
     <>
       <div className='mt-2 flex flex-col gap-8 px-[6%]'>
@@ -20,6 +20,12 @@ export default function HomePageComponent() {
                 <h3 className='hidden font-extralight text-neutral-200 text-base sm:block md:text-lg lg:text-2xl'>every five minutes</h3>
                 <Link to='/contact' className='px-2 py-1 mt-4 w-fit text-base font-bold bg-gradient-to-r from-blue-700 to-blue-500 text-white hover:shadow-xl hover:text-gray-200 shadow-sm shadow-neutral-600 rounded-lg sm:px-4 sm:py-2 sm:text-xl md:text-2xl sm:mt-6' href="">Call To Action</Link>
               </div>
+            </section>
+
+            <section className='flex'>
+              {/* {rides.map(() => {
+
+              })} */}
             </section>
           </main>
       </div>
