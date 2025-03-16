@@ -17,12 +17,19 @@ function App() {
     const today = String(new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" }));
 
     try {
-      const docRef = doc(db, "waitTimes", today);
+      const docRef = doc(db, "waitTimes", "2025-03-15");
       const docSnap = await getDoc(docRef);
   
       if (docSnap.exists()) {
-        console.log(docSnap.data());
-        rides = object.entries(docSnap.data());
+        // console.log(docSnap.data());
+        console.log(docSnap.id);
+        // rides = { id: docSnap.id, ...docSnap.data() }
+        // below version works and retrieves 0801 key/value
+        // rides = { ...docSnap.data() }['0801']
+        rides = docSnap.data()['0801']
+        console.log(rides)
+        const keys = Object.keys(docSnap.data());
+        console.log(keys)
         return docSnap.data();
       } else {
         console.log("No such document!");
