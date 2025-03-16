@@ -22,10 +22,16 @@ export default function HomePageComponent({rides}) {
               </div>
             </section>
 
-            <section className='flex'>
-              {/* {rides.map(() => {
-
-              })} */}
+            <section className='flex flex-wrap text-lg text-black gap-6'>
+              {/* <p>Test</p> */}
+              {Object.keys(rides).map((time, index) => (
+                <div className='flex flex-col gap-2' key={index}>
+                <p>Time: {time}</p>
+                {Object.keys(rides[time]).map((key, index) => (
+                  <p key={index}>{key} : {rides[time][key]}</p>
+                ))}
+                </div>
+              ))}
             </section>
           </main>
       </div>
