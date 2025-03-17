@@ -10,7 +10,6 @@ import ContactComponent from './components/ContactComponent'
 
 function App() {
 
-  // let rides = {name: 'John Doe'}
   const [rides, setRides] = useState({name: 'John Doe'})
 
   const getTodaysDocument = async () => {
@@ -22,9 +21,7 @@ function App() {
       const docSnap = await getDoc(docRef);
   
       if (docSnap.exists()) {
-        // console.log(docSnap.data());
         console.log(docSnap.id);
-        // below version works and retrieves 0801 key/value
         // rides = docSnap.data()['0801']
         setRides(docSnap.data())
         console.log(rides)
