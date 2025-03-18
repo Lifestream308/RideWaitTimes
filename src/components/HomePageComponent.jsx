@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function HomePageComponent({rides}) {
+export default function HomePageComponent({ridesObject}) {
   return (
     <>
       <div className='mt-2 flex flex-col gap-8 px-[6%]'>
@@ -24,11 +24,11 @@ export default function HomePageComponent({rides}) {
 
             <section className='flex flex-wrap text-lg text-black gap-6'>
               {/* <p>Test</p> */}
-              {Object.keys(rides).sort((a, b) => Number(a) - Number(b)).map((time, index) => (
+              {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).map((time, index) => (
                 <div className='flex flex-col gap-2' key={index}>
                 <p>Time: {time}</p>
-                {Object.keys(rides[time]).map((key, index) => (
-                  <p key={index}>{key} : {rides[time][key]}</p>
+                {Object.keys(ridesObject[time]).map((ride, index) => (
+                  <p key={index}>{ride} : {ridesObject[time][ride]}</p>
                 ))}
                 </div>
               ))}

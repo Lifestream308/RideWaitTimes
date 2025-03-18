@@ -10,7 +10,7 @@ import ContactComponent from './components/ContactComponent'
 
 function App() {
 
-  const [rides, setRides] = useState({name: 'John Doe'})
+  const [ridesObject, setRidesObject] = useState({name: 'John Doe'})
 
   const getTodaysDocument = async () => {
 
@@ -23,14 +23,14 @@ function App() {
       if (docSnap.exists()) {
         console.log(docSnap.id);
         // rides = docSnap.data()['0801']
-        setRides(docSnap.data())
-        console.log(rides)
+        setRidesObject(docSnap.data())
+        console.log(ridesObject)
         // const keys = Object.keys(docSnap.data());
         // console.log(keys)
         return docSnap.data();
       } else {
         console.log("No such document!");
-        console.log(rides);
+        console.log(ridesObject);
         return null;
       }
     } catch (error) {
@@ -49,7 +49,7 @@ function App() {
       <HeaderComponent />
 
       <Routes>
-        <Route path='/' element={ <HomePageComponent rides={rides} /> } />
+        <Route path='/' element={ <HomePageComponent ridesObject={ridesObject} /> } />
         <Route path='/about' element={ <AboutComponent /> } />
         <Route path='/contact' element={ <ContactComponent /> } />
       </Routes>
