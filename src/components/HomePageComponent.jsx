@@ -23,7 +23,7 @@ export default function HomePageComponent({ridesObject}) {
 
             <section className='flex flex-wrap text-lg text-black gap-6'>
               {/* <p>Test</p> */}
-              {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).map((time, index) => (
+              {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).slice(-5).reverse().map((time, index) => (
                 <div className='flex flex-col gap-2' key={index}>
                 <p>Time: {time}</p>
                 {Object.keys(ridesObject[time]).map((ride, index) => (
