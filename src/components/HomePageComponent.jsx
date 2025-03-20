@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function HomePageComponent({ridesObject}) {
   return (
     <>
-      <div className='mt-2 flex flex-col gap-8 px-[6%]'>
+      <div className='mt-2 flex flex-col gap-8'>
           <main className='flex flex-col gap-6 justify-center md:gap-16'>
             <div className='mt-2 text-center md:hidden'>
               <h1 className='text-2xl font-bold text-blue-700 md:hidden'>Disneyland</h1>
@@ -13,7 +13,7 @@ export default function HomePageComponent({ridesObject}) {
             <section className='relative w-full h-auto'>
               <img className='w-full h-auto' src="images/pixar-pier.jpg" alt="Pixar Pier at Disneyland" />
               <div className='absolute inset-0 w-7/10 bg-gradient-to-r from-gray-900/90 to-gray-500/5'></div>
-              <div className='absolute h-full flex flex-col top-0 justify-center left-[7%]'>
+              <div className='absolute h-full flex flex-col top-0 justify-center left-[13%]'>
                 <h3 className='font-bold text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl'>View Wait Times</h3>
                 <h3 className='mt-3 hidden font-extralight text-neutral-200 text-base sm:block md:text-lg lg:text-2xl'>Accurate ride data updated</h3>
                 <h3 className='hidden font-extralight text-neutral-200 text-base sm:block md:text-lg lg:text-2xl'>every five minutes</h3>
