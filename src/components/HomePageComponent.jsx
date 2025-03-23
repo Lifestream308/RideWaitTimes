@@ -21,9 +21,9 @@ export default function HomePageComponent({ridesObject}) {
               </div>
             </section>
 
-            <section className='flex flex-wrap text-black gap-8'>
+            <section className='flex flex-wrap flex-col md:flex-row text-black gap-8'>
             {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).slice(-5).reverse().map((time, index) => (
-              <div className='ml-8 w-2/5' key={index}>
+              <div className='ml-8 w-4/5 md:w-2/5' key={index}>
                 <div className='flex flex-col gap-3'>
                   <p className=''>Time: {time}</p>
                 {Object.keys(ridesObject[time]).sort().map((ride, index) => (
