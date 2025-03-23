@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function HomePageComponent({ridesObject}) {
   return (
     <>
-      <div className='mt-2 flex flex-col gap-8'>
+      <div className='mt-2'>
           <main className='flex flex-col gap-6 justify-center md:gap-16'>
             <div className='mt-2 text-center md:hidden'>
               <h1 className='text-2xl font-bold text-blue-700 md:hidden'>Disneyland</h1>
@@ -21,16 +21,20 @@ export default function HomePageComponent({ridesObject}) {
               </div>
             </section>
 
-            <section className='flex flex-wrap text-lg text-black gap-6'>
-              {/* <p>Test</p> */}
-              {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).slice(-5).reverse().map((time, index) => (
-                <div className='flex flex-col gap-2' key={index}>
-                <p>Time: {time}</p>
+            <section className='flex flex-wrap text-black gap-8'>
+            {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).slice(-5).reverse().map((time, index) => (
+              <div className='ml-8 w-2/5' key={index}>
+                <div className='flex flex-col gap-3'>
+                  <p className=''>Time: {time}</p>
                 {Object.keys(ridesObject[time]).map((ride, index) => (
-                  <p key={index}>{ride} : {ridesObject[time][ride]}</p>
+                  <div key={index} className='grid grid-cols-3 gap-4'>
+                    <p className='col-span-2'>{ride}</p>
+                    <p className='col-span-1'>- {ridesObject[time][ride]}</p>
+                  </div>
                 ))}
                 </div>
-              ))}
+              </div>
+            ))}
             </section>
           </main>
       </div>
