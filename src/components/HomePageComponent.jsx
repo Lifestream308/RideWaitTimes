@@ -26,7 +26,7 @@ export default function HomePageComponent({ridesObject}) {
               <div className='ml-8 w-2/5' key={index}>
                 <div className='flex flex-col gap-3'>
                   <p className=''>Time: {time}</p>
-                {Object.keys(ridesObject[time]).map((ride, index) => (
+                {Object.keys(ridesObject[time]).sort().map((ride, index) => (
                   <div key={index} className='grid grid-cols-3 gap-4'>
                     <p className='col-span-2'>{ride}</p>
                     <p className='col-span-1'>- {ridesObject[time][ride]}</p>
