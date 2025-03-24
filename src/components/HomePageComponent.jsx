@@ -7,7 +7,7 @@ export default function HomePageComponent({ridesObject}) {
       <div className='mt-2'>
           <main className='flex flex-col gap-6 justify-center md:gap-16'>
             <div className='mt-2 text-center md:hidden'>
-              <h1 className='text-2xl font-bold text-blue-700 md:hidden'>Disneyland</h1>
+              <h1 className='text-2xl text-blue-700 md:hidden'>Disneyland</h1>
               <h2 className='font-extralight text-gray-600 text-base'>Anaheim, California</h2>
             </div>
             <section className='relative w-full h-auto'>

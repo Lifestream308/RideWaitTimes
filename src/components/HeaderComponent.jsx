@@ -13,7 +13,7 @@ export default function HeaderComponent() {
               </Link>
             </div>
             <div className='hidden md:block'>
-              <h1 className='text-2xl font-bold text-blue-700 xl:text-3xl'>Disneyland</h1>
+              <h1 className='text-2xl text-blue-700 xl:text-3xl'>Disneyland</h1>
               <h2 className='font-extralight text-gray-600 text-base'>Anaheim, California</h2>
             </div>
             <ul className='hidden flex-wrap items-center lg:flex'>
