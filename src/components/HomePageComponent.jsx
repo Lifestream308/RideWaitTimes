@@ -1,7 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function HomePageComponent({ridesObject}) {
+export default function HomePageComponent({ridesObject, getTodaysDocument}) {
+
+  const convertTime = (timeString) => {
+    if (timeString.slice(0, -2) < 12 && timeString.slice(-2) == 0) {
+      return 12 + ':' + timeString.slice(-2) + ' am';
+    } else if (timeString.slice(0, -2) < 12) {
+      return timeString.slice(0, -2) + ':' + timeString.slice(-2) + ' am'
+    } else if (timeString.slice(0, -2) == 12) {
+      return timeString.slice(0, -2) + ':' + timeString.slice(-2) + ' pm'
+    } else {
+      return Number(timeString.slice(0, -2)) - 12 + ':' + timeString.slice(-2) + ' pm'
+    }
+  }
+
   return (
     <>
       <div className='mt-2'>
@@ -17,16 +30,16 @@ export default function HomePageComponent({ridesObject}) {
                 <h3 className='font-bold text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl'>View Wait Times</h3>
                 <h3 className='mt-3 font-extralight text-neutral-200 text-base sm:block md:text-lg lg:text-2xl'>Accurate ride data updated</h3>
                 <h3 className='font-extralight text-neutral-200 text-base sm:block md:text-lg lg:text-2xl'>every five minutes</h3>
-                <Link to='/contact' className='px-2 py-1 mt-4 w-fit text-base font-bold bg-gradient-to-r from-blue-700 to-blue-500 text-white hover:shadow-xl hover:text-gray-200 shadow-sm shadow-neutral-600 rounded-lg sm:px-4 sm:py-2 sm:text-xl md:text-2xl sm:mt-6' href="">Call To Action</Link>
+                <Link to='/contact' className='px-2 py-1 mt-4 w-fit text-base font-bold bg-gradient-to-r from-blue-700 to-blue-500 text-white hover:shadow-xl hover:text-gray-200 shadow-sm shadow-neutral-600 rounded-lg sm:px-4 sm:py-2 sm:text-xl md:text-2xl sm:mt-6' href="">Call to action</Link>
               </div>
             </section>
 
-            {/* <section className='flex flex-wrap flex-col md:flex-row text-gray-700 gap-8'> */}
+            <p className='mx-auto w-fit text-2xl text-gray-700'>Scroll for more times</p>
             <section className='ml-8 flex overflow-x-auto md:flex-row text-gray-700 gap-8'>
-            {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).slice(-5).reverse().map((time, index) => (
+            {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).slice(-12).reverse().map((time, index) => (
               <div className='p-3 w-4/5 min-w-[20rem] md:w-2/5 bg-blue-100/60 rounded-lg' key={index}>
                 <div className='flex flex-col gap-3'>
-                  <p className=''>Time: {time}</p>
+                  <p className=''>{convertTime(time)}</p>
                 {Object.keys(ridesObject[time]).sort().map((ride, index) => (
                   <div key={index} className='grid grid-cols-3 gap-4 border-gray-300 border-b-2'>
                     <p className='col-span-2'>{ride}</p>

@@ -49,7 +49,7 @@ function App() {
       <HeaderComponent />
 
       <Routes>
-        <Route path='/' element={ <HomePageComponent ridesObject={ridesObject} /> } />
+        <Route path='/' element={ <HomePageComponent ridesObject={ridesObject} getTodaysDocument={getTodaysDocument} /> } />
         <Route path='/about' element={ <AboutComponent /> } />
         <Route path='/contact' element={ <ContactComponent /> } />
       </Routes>
