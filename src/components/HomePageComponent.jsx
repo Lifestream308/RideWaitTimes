@@ -42,7 +42,7 @@ export default function HomePageComponent({ridesObject, getTodaysDocument}) {
                 <div className='flex flex-col gap-3'>
                   <p className=''>{convertTime(time)}</p>
                 {Object.keys(ridesObject[time]).sort().map((ride, index) => (
-                  <div key={index} className='grid grid-cols-3 gap-4 border-gray-300 border-b-2'>
+                  <div key={index} className='min-h-[3rem] grid grid-cols-3 gap-4 border-gray-300 border-b-2'>
                     <p className='col-span-2'>{ride}</p>
                     <p className='col-span-1'>- {ridesObject[time][ride]}</p>
                   </div>
