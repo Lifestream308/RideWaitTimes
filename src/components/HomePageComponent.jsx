@@ -30,11 +30,12 @@ export default function HomePageComponent({ridesObject, getTodaysDocument}) {
                 <h3 className='font-bold text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl'>View Wait Times</h3>
                 <h3 className='mt-3 font-extralight text-neutral-200 text-base sm:block md:text-lg lg:text-2xl'>Accurate ride data updated</h3>
                 <h3 className='font-extralight text-neutral-200 text-base sm:block md:text-lg lg:text-2xl'>every five minutes</h3>
-                <Link to='/contact' className='px-2 py-1 mt-4 w-fit text-base font-bold bg-gradient-to-r from-blue-700 to-blue-500 text-white hover:shadow-xl hover:text-gray-200 shadow-sm shadow-neutral-600 rounded-lg sm:px-4 sm:py-2 sm:text-xl md:text-2xl sm:mt-6' href="">Call to action</Link>
+                {/* <Link to='/contact' className='px-2 py-1 mt-4 w-fit text-base font-bold bg-gradient-to-r from-blue-700 to-blue-500 text-white hover:shadow-xl hover:text-gray-200 shadow-sm shadow-neutral-600 rounded-lg sm:px-4 sm:py-2 sm:text-xl md:text-2xl sm:mt-6' href="">Call to action</Link> */}
+                <button className='px-2 py-1 mt-4 w-fit text-base font-bold bg-gradient-to-r from-blue-700 to-blue-500 text-white hover:shadow-xl hover:text-gray-200 shadow-sm shadow-neutral-600 rounded-lg sm:px-4 sm:py-2 sm:text-xl md:text-2xl sm:mt-6' onClick={getTodaysDocument}>Refresh Data</button>
               </div>
             </section>
 
-            <p className='mx-auto w-fit text-2xl text-gray-700'>Scroll for more times</p>
+            <p className='mx-auto w-fit text-2xl text-gray-700'>Scroll right for more times</p>
             <section className='ml-8 flex overflow-x-auto md:flex-row text-gray-700 gap-8'>
             {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).slice(-12).reverse().map((time, index) => (
               <div className='p-3 w-4/5 min-w-[20rem] md:w-2/5 bg-blue-100/60 rounded-lg' key={index}>
