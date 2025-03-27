@@ -6,7 +6,7 @@ import FooterComponent from './components/FooterComponent'
 import HeaderComponent from './components/HeaderComponent'
 import HomePageComponent from './components/HomePageComponent'
 import AboutComponent from './components/AboutComponent'
-import ContactComponent from './components/ContactComponent'
+import SettingsComponent from './components/SettingsComponent'
 
 function App() {
 
@@ -55,7 +55,7 @@ function App() {
       <Routes>
         <Route path='/' element={ <HomePageComponent ridesObject={ridesObject} getTodaysDocument={getTodaysDocument} rideFilter={rideFilter} /> } />
         <Route path='/about' element={ <AboutComponent /> } />
-        <Route path='/contact' element={ <ContactComponent rideFilter={rideFilter} setRideFilter={setRideFilter} rideNames={rideNames} /> } />
+        <Route path='/settings' element={ <SettingsComponent rideFilter={rideFilter} setRideFilter={setRideFilter} rideNames={rideNames} /> } />
       </Routes>
 
       <FooterComponent />

@@ -48,8 +48,7 @@ export default function HamburgerComponent() {
                 <ul className='pt-6 flex flex-col gap-6 text-center'>
                     <li><Link to='/' className='px-4 py-2 text-2xl font-bold text-blue-800 hover:bg-gray-200 rounded-lg'>Home</Link></li>
                     <li><Link to='/about' className='px-4 py-2 text-2xl font-bold text-blue-800 hover:bg-gray-200 rounded-lg' href="">About</Link></li>
-                    <li><Link to='/contact' className='px-4 py-2 text-2xl font-bold text-blue-800 hover:bg-gray-200 rounded-lg' href="">Contact</Link></li>
-                    {/* <li><Link to='/contact' className='px-4 py-2 text-2xl font-bold text-white bg-gradient-to-r from-blue-700 to-blue-500 hover:shadow-md hover:text-gray-200 rounded-lg shadow-sm shadow-gray-800' href="">Contact</Link></li> */}
+                    <li><Link to='/settings' className='px-4 py-2 text-2xl font-bold text-blue-800 hover:bg-gray-200 rounded-lg' href="">Settings</Link></li>
                 </ul>
             </div>
         </div>
