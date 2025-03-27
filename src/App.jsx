@@ -12,6 +12,10 @@ function App() {
 
   const [ridesObject, setRidesObject] = useState({name: 'John Doe'})
 
+  const [rideFilter, setRideFilter] = useState({})
+  
+  const rideNames = Object.keys(ridesObject[Object.keys(ridesObject)[0]]).sort()
+
   const getTodaysDocument = async () => {
 
     const today = String(new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" }));
@@ -49,9 +53,9 @@ function App() {
       <HeaderComponent />
 
       <Routes>
-        <Route path='/' element={ <HomePageComponent ridesObject={ridesObject} getTodaysDocument={getTodaysDocument} /> } />
+        <Route path='/' element={ <HomePageComponent ridesObject={ridesObject} getTodaysDocument={getTodaysDocument} rideFilter={rideFilter} /> } />
         <Route path='/about' element={ <AboutComponent /> } />
-        <Route path='/contact' element={ <ContactComponent /> } />
+        <Route path='/contact' element={ <ContactComponent rideFilter={rideFilter} setRideFilter={setRideFilter} rideNames={rideNames} /> } />
       </Routes>
 
       <FooterComponent />
