@@ -7,13 +7,18 @@
     top: 50%;
 }
 
-.hamburgerCrossed:nth-child(2){
+/* .hamburgerCrossed:nth-child(2){
     transform: scale(0.1);
     opacity: 0;
     transition: ease-out 0.5s;
-}
+} */
 
-.hamburgerCrossed:nth-child(3){
+/* .hamburgerCrossed:nth-child(3){
+    transform: translate(-50%, -50%) rotate(135deg);
+    transition: ease-out 0.5s;
+    top: 50%;
+} */
+.hamburgerCrossed:nth-child(2){
     transform: translate(-50%, -50%) rotate(135deg);
     transition: ease-out 0.5s;
     top: 50%;
