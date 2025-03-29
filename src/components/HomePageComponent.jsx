@@ -7,7 +7,7 @@ export default function HomePageComponent({ridesObject, getTodaysDocument, rideF
     if (timeString.slice(0, -2) < 12 && timeString.slice(0, -2) == 0) {
       return 12 + ':' + timeString.slice(-2) + ' am';
     } else if (timeString.slice(0, -2) < 12) {
-      return timeString.slice(0, -2) + ':' + timeString.slice(-2) + ' am'
+      return Number(timeString.slice(0, -2)) + ':' + timeString.slice(-2) + ' am'
     } else if (timeString.slice(0, -2) == 12) {
       return timeString.slice(0, -2) + ':' + timeString.slice(-2) + ' pm'
     } else {
