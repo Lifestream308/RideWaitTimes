@@ -1,7 +1,20 @@
-import React from 'react'
+import {useRef} from 'react'
 import { Link } from 'react-router-dom'
 
 export default function HomePageComponent({ridesObject, getTodaysDocument, rideFilter}) {
+
+  const scrollRef = useRef(null)
+
+  const scrollToNextElement = (direction) => {
+    if (scrollRef.current) {
+      const newScrollLeft =
+        direction === "right"
+          ? scrollRef.current.scrollLeft + 340
+          : Math.max(0, scrollRef.current.scrollLeft - 340);
+
+      scrollRef.current.scrollTo({ left: newScrollLeft, behavior: "smooth" });
+    }
+  };
 
   const convertTime = (timeString) => {
     if (timeString.slice(0, -2) < 12 && timeString.slice(0, -2) == 0) {
@@ -37,8 +50,11 @@ export default function HomePageComponent({ridesObject, getTodaysDocument, rideF
               </div>
             </section>
 
-            <p className='mx-auto w-fit text-2xl text-gray-700'>Scroll right for more times</p>
-            <section className='ml-8 flex overflow-x-auto md:flex-row text-gray-700 gap-8'>
+            <div className="flex justify-center gap-6">
+              <button onClick={() => scrollToNextElement("left")} className="px-4 py-2 bg-blue-500 text-white rounded">Scroll Left</button>
+              <button onClick={() => scrollToNextElement("right")} className="px-4 py-2 bg-blue-500 text-white rounded">Scroll Right</button>
+            </div>
+            <section ref={scrollRef} className='ml-8 flex overflow-x-auto md:flex-row text-gray-700 gap-8'>
             {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).slice(-12).reverse().map((time, timeIndex) => (
               <div className='p-3 w-4/5 min-w-[20rem] md:w-2/5 bg-blue-100/60 rounded-lg' key={timeIndex}>
                 <div className='flex flex-col gap-3'>
