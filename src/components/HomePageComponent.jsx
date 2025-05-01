@@ -51,8 +51,8 @@ export default function HomePageComponent({ridesObject, getTodaysDocument, rideF
             </section>
 
             <div className="flex justify-center gap-6">
-              <button onClick={() => scrollToNextElement("left")} className="px-4 py-2 bg-blue-500 text-white rounded">Scroll Left</button>
-              <button onClick={() => scrollToNextElement("right")} className="px-4 py-2 bg-blue-500 text-white rounded">Scroll Right</button>
+              <button onClick={() => scrollToNextElement("left")} className="px-4 py-2 bg-blue-500 text-white rounded shadow-md shadow-gray-600 hover:text-gray-200 hover:bg-blue-500/95">Scroll Left</button>
+              <button onClick={() => scrollToNextElement("right")} className="px-4 py-2 bg-blue-500 text-white rounded shadow-md shadow-gray-600 hover:text-gray-200 hover:bg-blue-500/95">Scroll Right</button>
             </div>
             <section ref={scrollRef} className='ml-8 flex overflow-x-auto md:flex-row text-gray-700 gap-8'>
             {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).slice(-12).reverse().map((time, timeIndex) => (
