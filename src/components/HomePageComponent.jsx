@@ -44,15 +44,15 @@ export default function HomePageComponent({ridesObject, getTodaysDocument, rideF
                 <h3 className='mt-3 font-extralight text-neutral-200 text-base sm:block md:text-lg lg:text-2xl'>Accurate ride data updated</h3>
                 <h3 className='font-extralight text-neutral-200 text-base sm:block md:text-lg lg:text-2xl'>every five minutes</h3>
                 <div className='flex flex-wrap gap-6'>
-                  <button className='px-2 py-1 mt-4 w-fit text-base font-bold bg-gradient-to-r from-blue-700 to-blue-500 text-white hover:shadow-xl hover:text-gray-200 shadow-sm shadow-neutral-600 rounded-lg sm:px-4 sm:py-2 sm:text-xl md:text-2xl sm:mt-6' onClick={() => {getTodaysDocument(); alert("Data Refreshed");}}>Refresh Data</button>
-                  <Link to='/settings' className='px-2 py-1 mt-4 w-fit text-base font-bold bg-gradient-to-r from-blue-700 to-blue-500 text-white hover:shadow-xl hover:text-gray-200 shadow-sm shadow-neutral-600 rounded-lg sm:px-4 sm:py-2 sm:text-xl md:text-2xl sm:mt-6' href="">Settings</Link>
+                  <button className='px-2 py-1 mt-4 w-fit text-base font-bold bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:shadow-xl hover:text-gray-200 shadow-sm shadow-neutral-600 rounded-lg sm:px-4 sm:py-2 sm:text-xl md:text-2xl sm:mt-6' onClick={() => {getTodaysDocument(); alert("Data Refreshed");}}>Refresh Data</button>
+                  <Link to='/settings' className='px-2 py-1 mt-4 w-fit text-base font-bold bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:shadow-xl hover:text-gray-200 shadow-sm shadow-neutral-600 rounded-lg sm:px-4 sm:py-2 sm:text-xl md:text-2xl sm:mt-6' href="">Settings</Link>
                 </div>
               </div>
             </section>
 
             <div className="flex justify-center gap-6">
-              <button onClick={() => scrollToNextElement("left")} className="px-4 py-2 bg-blue-500 text-white rounded shadow-md shadow-gray-600 hover:text-gray-200 hover:bg-blue-500/95">Scroll Left</button>
-              <button onClick={() => scrollToNextElement("right")} className="px-4 py-2 bg-blue-500 text-white rounded shadow-md shadow-gray-600 hover:text-gray-200 hover:bg-blue-500/95">Scroll Right</button>
+              <button onClick={() => scrollToNextElement("left")} className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded shadow-md shadow-gray-600 hover:text-gray-200 hover:bg-blue-500/95">Scroll Left</button>
+              <button onClick={() => scrollToNextElement("right")} className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded shadow-md shadow-gray-600 hover:text-gray-200 hover:bg-blue-500/95">Scroll Right</button>
             </div>
             <section ref={scrollRef} className='ml-8 flex overflow-x-auto md:flex-row text-gray-700 gap-8'>
             {Object.keys(ridesObject).sort((a, b) => Number(a) - Number(b)).slice(-12).reverse().map((time, timeIndex) => (
