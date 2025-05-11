@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { db } from './firebase-config'
 import {doc, getDoc} from 'firebase/firestore'
+import { DateTime } from 'luxon'
 import FooterComponent from './components/FooterComponent'
 import HeaderComponent from './components/HeaderComponent'
 import HomePageComponent from './components/HomePageComponent'
@@ -17,6 +18,9 @@ function App() {
   const rideNames = Object.keys(ridesObject[Object.keys(ridesObject)[0]]).sort()
 
   const getTodaysDocument = async () => {
+
+    const now = DateTime.now().setZone('America/Los_Angeles').toFormat('yyyy-MM-dd');
+    const yesterday = DateTime.now().setZone('America/Los_Angeles').minus({ days: 1 }).toFormat('yyyy-MM-dd');
 
     const today = String(new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" }));
 
