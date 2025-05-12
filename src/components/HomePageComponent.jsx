@@ -51,7 +51,7 @@ export default function HomePageComponent({ridesObject, getTodaysDocument, rideF
             </section>
 
             {dataNotAvailable && 
-              <p>Today's Disneyland ride information not yet available.</p>
+              <p className='mx-auto w-fit text-3xl text-gray-700'>Today's Disneyland ride information not available until after 8am.</p>
             }
 
             <div className="flex justify-center gap-6">
