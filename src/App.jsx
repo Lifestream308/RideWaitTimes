@@ -14,6 +14,8 @@ function App() {
   const [ridesObject, setRidesObject] = useState({name: 'John Doe'})
 
   const [rideFilter, setRideFilter] = useState({})
+
+  const [dataNotAvailable, setDataNotAvailable] = useState(false)
   
   const rideNames = Object.keys(ridesObject[Object.keys(ridesObject)[0]]).sort()
 
@@ -35,10 +37,12 @@ function App() {
         console.log(ridesObject)
         // const keys = Object.keys(docSnap.data());
         // console.log(keys)
+        setDataNotAvailable(false)
         return docSnap.data();
       } else {
         console.log("No such document!");
         console.log(ridesObject);
+        setDataNotAvailable(true)
         return null;
       }
     } catch (error) {
@@ -57,7 +61,7 @@ function App() {
       <HeaderComponent />
 
       <Routes>
-        <Route path='/' element={ <HomePageComponent ridesObject={ridesObject} getTodaysDocument={getTodaysDocument} rideFilter={rideFilter} /> } />
+        <Route path='/' element={ <HomePageComponent ridesObject={ridesObject} getTodaysDocument={getTodaysDocument} rideFilter={rideFilter} dataNotAvailable={dataNotAvailable} /> } />
         <Route path='/about' element={ <AboutComponent /> } />
         <Route path='/settings' element={ <SettingsComponent rideFilter={rideFilter} setRideFilter={setRideFilter} rideNames={rideNames} /> } />
       </Routes>
