@@ -21,7 +21,7 @@ function App() {
 
   const getTodaysDocument = async () => {
 
-    const now = DateTime.now().setZone('America/Los_Angeles').toFormat('yyyy-MM-dd');
+    // const now = DateTime.now().setZone('America/Los_Angeles').toFormat('yyyy-MM-dd');
     const yesterday = DateTime.now().setZone('America/Los_Angeles').minus({ days: 1 }).toFormat('yyyy-MM-dd');
 
     const today = String(new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" }));
@@ -35,16 +35,23 @@ function App() {
         // rides = docSnap.data()['0801']
         setRidesObject(docSnap.data())
         console.log(ridesObject)
-        // const keys = Object.keys(docSnap.data());
-        // console.log(keys)
         setDataNotAvailable(false)
         return docSnap.data();
       } else {
-        console.log("No such document!");
+        console.log("Today's document not available. Attempting Yesterday's data.");
         console.log(ridesObject);
         setDataNotAvailable(true)
-        return null;
-      }
+
+        const yesterdaysDocRef = doc(db, "waitTimes", yesterday);
+        const yesterdaysDocSnap = await getDoc(yesterdaysDocRef);
+
+        if (yesterdaysDocSnap.exists()) {
+          console.log(yesterdaysDocSnap.id);
+          setRidesObject(yesterdaysDocSnap.data())
+          console.log(ridesObject)
+
+          return yesterdaysDocSnap.data();
+      }}
     } catch (error) {
       console.error("Error retrieving document:", error);
       return null;
