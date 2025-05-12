@@ -1,7 +1,7 @@
 import {useRef} from 'react'
 import { Link } from 'react-router-dom'
 
-export default function HomePageComponent({ridesObject, getTodaysDocument, rideFilter}) {
+export default function HomePageComponent({ridesObject, getTodaysDocument, rideFilter, dataNotAvailable}) {
 
   const scrollRef = useRef(null)
 
@@ -49,6 +49,10 @@ export default function HomePageComponent({ridesObject, getTodaysDocument, rideF
                 </div>
               </div>
             </section>
+
+            {dataNotAvailable && 
+              <p>Today's Disneyland ride information not yet available.</p>
+            }
 
             <div className="flex justify-center gap-6">
               <button onClick={() => scrollToNextElement("left")} className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded shadow-md shadow-gray-600 hover:text-gray-200 hover:bg-blue-500/95">Scroll Left</button>
