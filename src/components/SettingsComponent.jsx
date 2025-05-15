@@ -37,9 +37,10 @@ export default function SettingsComponent({rideNames, rideFilter, setRideFilter}
             <button className='mt-4 px-2 py-1 w-fit text-base font-bold bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:shadow-xl hover:text-gray-200 shadow-sm shadow-neutral-600 rounded-lg sm:px-4 sm:py-2 sm:text-xl md:text-2xl' onClick={handleRidesOn}>All Rides ON</button>
           </div>
         {rideNames.map((rideName, index) => (
-          <div onClick={() => handleFilter(rideName)} key={index} className='min-h-[3rem] w-full md:w-4/5 max-w-[40rem] grid grid-cols-3 gap-4 border-gray-300 border-b-2'>
-            <p className='col-span-2'>{rideName}</p>
+          <div onClick={() => handleFilter(rideName)} key={index} className='min-h-[3rem] w-full md:w-4/5 max-w-[40rem] grid grid-cols-6 gap-0 border-gray-300 border-b-2'>
+            <p className='mr-4 col-span-4'>{rideName}</p>
             <p className='col-span-1'>{rideFilter[rideName] ? "OFF" : "ON"}</p>
+            <p className='col-span-1'>{rideFilter[rideName] ? <i class="bi bi-x-circle text-2xl text-red-700"></i> : <i class="bi bi-check-circle-fill text-2xl text-green-600"></i>}</p>
           </div>
         ))}
         </div>
