@@ -10,3 +10,5 @@ function TopScrollComponent() {
 
   return null;
 }
+
+export default TopScrollComponent

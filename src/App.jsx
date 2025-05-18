@@ -8,6 +8,7 @@ import HeaderComponent from './components/HeaderComponent'
 import HomePageComponent from './components/HomePageComponent'
 import AboutComponent from './components/AboutComponent'
 import SettingsComponent from './components/SettingsComponent'
+import TopScrollComponent from './components/TopScrollComponent'
 
 function App() {
 
@@ -65,6 +66,7 @@ function App() {
 
   return (
     <>
+      <TopScrollComponent />
       <HeaderComponent />
 
       <Routes>
