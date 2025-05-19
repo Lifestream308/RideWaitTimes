@@ -19,6 +19,7 @@ export default function HeaderComponent() {
             <ul className='hidden flex-wrap items-center lg:flex'>
               <li><Link to='/' className='px-4 py-2 text-xl font-light text-blue-800 hover:underline'>Home</Link></li>
               <li><Link to='/about' className='px-4 py-2 text-xl font-light text-blue-800 hover:underline' href="">About</Link></li>
+              <li><Link to='/maps' className='px-4 py-2 text-xl font-light text-blue-800 hover:underline' href="">Maps</Link></li>
               <li><Link to='/settings' className='px-4 py-2 text-xl font-light text-blue-800 hover:underline' href="">Settings</Link></li>
             </ul>
             <HamburgerComponent />
