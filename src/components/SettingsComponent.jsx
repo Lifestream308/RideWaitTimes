@@ -40,7 +40,7 @@ export default function SettingsComponent({rideNames, rideFilter, setRideFilter}
           <button onClick={() => handleFilter(rideName)} key={index} className='min-h-[3rem] w-full md:w-4/5 max-w-[40rem] grid grid-cols-6 gap-0 text-left border-gray-300 border-b-2'>
             <p className='mr-4 col-span-4'>{rideName}</p>
             <p className='col-span-1'>{rideFilter[rideName] ? "OFF" : "ON"}</p>
-            <p className='col-span-1'>{rideFilter[rideName] ? <i class="bi bi-x-circle text-2xl text-red-700"></i> : <i class="bi bi-check-circle-fill text-2xl text-green-600"></i>}</p>
+            <p className='col-span-1'>{rideFilter[rideName] ? <i className="bi bi-x-circle text-2xl text-red-700"></i> : <i className="bi bi-check-circle-fill text-2xl text-green-600"></i>}</p>
           </button>
         ))}
         </div>
