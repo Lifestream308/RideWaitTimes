@@ -9,6 +9,7 @@ import HomePageComponent from './components/HomePageComponent'
 import AboutComponent from './components/AboutComponent'
 import SettingsComponent from './components/SettingsComponent'
 import TopScrollComponent from './components/TopScrollComponent'
+import MapsComponent from './components/MapsComponent'
 
 function App() {
 
@@ -73,6 +74,7 @@ function App() {
         <Route path='/' element={ <HomePageComponent ridesObject={ridesObject} getTodaysDocument={getTodaysDocument} rideFilter={rideFilter} dataNotAvailable={dataNotAvailable} /> } />
         <Route path='/about' element={ <AboutComponent /> } />
         <Route path='/settings' element={ <SettingsComponent rideFilter={rideFilter} setRideFilter={setRideFilter} rideNames={rideNames} /> } />
+        <Route path='/maps' element={ <MapsComponent /> } />
       </Routes>
 
       <FooterComponent />
