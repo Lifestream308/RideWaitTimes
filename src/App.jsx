@@ -37,7 +37,7 @@ function App() {
         // rides = docSnap.data()['0801']
         setRidesObject(docSnap.data())
         console.log(ridesObject)
-        console.log(TextEncoder().encode(JSON.stringify(ridesObject)).length)
+        console.log(new TextEncoder().encode(JSON.stringify(ridesObject)).length)
         setDataNotAvailable(false)
         return docSnap.data();
       } else {
