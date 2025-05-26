@@ -13,6 +13,7 @@ export default function MapsComponent() {
 
         const data = await response.json();
         console.log('Data received:', data);
+        console.log('Rides that are attractions:', data.liveData.filter(ride => ride.entityType == "ATTRACTION"));
       } catch (error) {
         console.error('Fetch error:', error.message);
       }
