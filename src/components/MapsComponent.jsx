@@ -12,11 +12,11 @@ export default function MapsComponent() {
         }
 
         const data = await response.json();
-        console.log('Data received:', data);
+        console.log('Full Data received:', data);
         // console.log('Rides that are attractions:', data.liveData.filter(ride => ride.entityType == "ATTRACTION"));
-        console.log('Rides Object:', data.liveData.reduce((acc, ride) => {
+        console.log('Rides Reduce Object:', data.liveData.reduce((acc, ride) => {
           if (ride.entityType == 'ATTRACTION') {
-            acc[ride.name] = ride.status
+            acc[ride.name] = ride.queue?.STANDBY?.waitTime ? ride.queue.STANDBY.waitTime : ride.status
           }
           return acc
         }, {}));
