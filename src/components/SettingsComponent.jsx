@@ -29,7 +29,7 @@ export default function SettingsComponent({rideNames, rideFilter, setRideFilter}
 
   return (
     <div>
-        <div className='mt-2 flex flex-col gap-8 px-[6%] bg-slate-100'>
+        <div className='mt-2 pb-4 flex flex-col gap-8 px-[6%] bg-slate-100'>
           <h2 className='mt-6 text-4xl text-gray-600 font-bold'>Settings</h2>
           <p className='max-w-[40rem] text-xl text-gray-600'>There's too many rides! Turn all rides off, then click to toggle ON the rides you want to keep track of.</p>
           <div className='flex gap-10'>
